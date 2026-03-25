@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <!-- Fixed-size matrix/vector -->
+  <Type Name="Eigen::Matrix&lt;*,*,*,*,*,*&gt;">
+    <DisplayString>({$T2} x {$T3}) matrix</DisplayString>
+    <Expand>
+      <Item Name="[rows]">m_storage.m_rows</Item>
+      <Item Name="[cols]">m_storage.m_cols</Item>
+      <ArrayItems>
+        <Size>m_storage.m_rows * m_storage.m_cols</Size>
+        <ValuePointer>m_storage.m_data.array</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+
+</AutoVisualizer>
